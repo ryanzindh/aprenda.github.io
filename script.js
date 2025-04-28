@@ -6,12 +6,12 @@ function mostrarFormulario() {
   setTimeout(() => {
     formulario.style.opacity = 1;
     formulario.style.transition = 'opacity 0.8s ease';
-  }, 100); // pequena espera para ativar o efeito
+  }, 100); 
 }
 
 function calcularTMB(event) {
-  event.preventDefault(); // Evita reload
-
+  event.preventDefault();
+  
   const peso = parseFloat(document.getElementById('peso').value);
   const altura = parseFloat(document.getElementById('altura').value);
   const idade = parseInt(document.getElementById('idade').value);
@@ -20,7 +20,7 @@ function calcularTMB(event) {
   const objetivo = document.getElementById('objetivo').value;
   const resultado = document.getElementById('resultado');
 
-  // Validação
+  
   if (
     isNaN(peso) || 
     isNaN(altura) || 
@@ -33,7 +33,6 @@ function calcularTMB(event) {
     return;
   }
 
-  // Mostrando "Calculando..." antes do resultado
   resultado.innerHTML = '<p style="color: #007bff;">Calculando...</p>';
 
   setTimeout(() => {
@@ -60,5 +59,5 @@ function calcularTMB(event) {
         <p><small>Lembre-se de ajustar conforme seus resultados!</small></p>
       </div>
     `;
-  }, 1000); // 1 segundo pra dar aquele "peso" no loading
+  }, 1000); 
 }
