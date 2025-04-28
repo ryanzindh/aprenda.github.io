@@ -1,9 +1,11 @@
 function mostrarFormulario() {
   document.getElementById('formulario').style.display = 'block';
+  // Opcional: rolar pra o formulário
+  document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
 }
 
 function calcularTMB(event) {
-  event.preventDefault(); // Não recarregar a página
+  event.preventDefault(); // Evita reload
 
   const peso = parseFloat(document.getElementById('peso').value);
   const altura = parseFloat(document.getElementById('altura').value);
@@ -31,9 +33,9 @@ function calcularTMB(event) {
   let gastoTotal = tmb * atividade;
 
   if (objetivo === 'ganhar') {
-    gastoTotal += 300; // Consuma 300 kcal a mais por dia
+    gastoTotal += 300;
   } else if (objetivo === 'perder') {
-    gastoTotal -= 300; // Consuma 300 kcal a menos por dia
+    gastoTotal -= 300;
   }
 
   document.getElementById('resultado').innerHTML = `Seu gasto calórico diário estimado é: <strong>${gastoTotal.toFixed(0)} kcal</strong>`;
