@@ -25,7 +25,7 @@
       <p>Qual é o seu objetivo? Ganhar massa? Perder peso?</p>
       <p><strong>Massa = peso</strong>.</p>
       <p>Antes de qualquer coisa, a gente precisa entender como a energia do corpo funciona.</p>
-      <p>O nosso peso está ligado à energia. E a energia corporal é medida em <strong>caloria/kcal</strong> (quilocalorias), que é uma unidade de energia, tipo <strong>volts</strong> na eletricidade, mas aqui é pra medir o quanto de energia a gente consome e gasta no corpo.</p>
+      <p>O nosso peso está ligado à energia. E a energia corporal é medida em <strong>caloria/kcal</strong> (quilocalorias), que é uma unidade de energia, tipo <strong>volts</strong> na eletricidade.</p>
       <p>Se você consome mais energia do que gasta, você ganha peso.<br>
       Se gasta mais do que consome, perde peso.<br>
       Simples assim, sem mágica.</p>
@@ -36,39 +36,53 @@
       <p>Caloria é uma unidade de energia, tipo volts do chuveiro.</p>
       <p><strong>Como eu consumo energia?</strong> Comendo!</p>
       <p><strong>Como eu gasto energia?</strong> Praticando atividades físicas, tipo musculação.</p>
-      <button class="btn" onclick="definirObjetivo()">Defina seu Objetivo</button>
     </section>
 
     <section id="taxa">
-      <h2>Como Calcular Sua Taxa Metabólica Basal (TMB)?</h2>
-      <p>Você precisa calcular sua <strong>Taxa Metabólica Basal</strong> para saber quanta energia seu corpo gasta parado.</p>
+      <h2>Calcular Sua Taxa Metabólica Basal</h2>
+      <button class="btn" onclick="mostrarFormulario()">Calcular Taxa Metabólica Basal</button>
 
-      <h3>Fórmula de Mifflin-St Jeor:</h3>
-      <p><strong>Homens:</strong><br>
-      TMB = (10 × peso em kg) + (6,25 × altura em cm) – (5 × idade em anos) + 5</p>
+      <div id="formulario" style="display: none; margin-top: 30px;">
+        <form onsubmit="calcularTMB(event)">
+          <label>Peso (kg):</label><br>
+          <input type="number" id="peso" required><br><br>
 
-      <p><strong>Mulheres:</strong><br>
-      TMB = (10 × peso em kg) + (6,25 × altura em cm) – (5 × idade em anos) – 161</p>
+          <label>Altura (cm):</label><br>
+          <input type="number" id="altura" required><br><br>
 
-      <h3>Exemplo rápido:</h3>
-      <p>Homem, 80 kg, 1,75 m de altura, 25 anos:<br>
-      TMB = (10 × 80) + (6,25 × 175) – (5 × 25) + 5 = 1773,75 kcal/dia</p>
+          <label>Idade (anos):</label><br>
+          <input type="number" id="idade" required><br><br>
 
-      <h3>Multiplicando pelo Fator de Atividade:</h3>
-      <ul>
-        <li>Sedentário: × 1,2</li>
-        <li>Levemente ativo: × 1,375</li>
-        <li>Moderadamente ativo: × 1,55</li>
-        <li>Muito ativo: × 1,725</li>
-        <li>Extremamente ativo: × 1,9</li>
-      </ul>
+          <label>Sexo:</label><br>
+          <select id="sexo" required>
+            <option value="">Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select><br><br>
 
-      <p>Então:<br>
-      1773 × 1,55 = 2748 kcal (gasto diário real).</p>
+          <label>Nível de atividade:</label><br>
+          <select id="atividade" required>
+            <option value="">Selecione</option>
+            <option value="1.2">Sedentário</option>
+            <option value="1.375">Levemente ativo</option>
+            <option value="1.55">Moderadamente ativo</option>
+            <option value="1.725">Muito ativo</option>
+            <option value="1.9">Extremamente ativo</option>
+          </select><br><br>
 
-      <h3>Agora é ajustar conforme seu objetivo:</h3>
-      <p>Quer ganhar massa? Consuma mais.<br>
-      Quer perder peso? Consuma menos.</p>
+          <label>Objetivo:</label><br>
+          <select id="objetivo" required>
+            <option value="">Selecione</option>
+            <option value="ganhar">Ganhar massa</option>
+            <option value="perder">Perder peso</option>
+          </select><br><br>
+
+          <button type="submit" class="btn">Calcular</button>
+        </form>
+
+        <div id="resultado" style="margin-top: 20px;"></div>
+      </div>
+
     </section>
   </main>
 
