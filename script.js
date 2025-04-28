@@ -1,2 +1,3 @@
-console.log('Olá, mundo!');
-alert('Seja bem-vindo ao meu site!');
+function definirObjetivo() {
+  alert('Defina seu objetivo: ganhar massa ou perder peso!');
+}
