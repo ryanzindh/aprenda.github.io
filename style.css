@@ -47,31 +47,42 @@ nav a:hover {
 
 main {
   padding: 40px 20px;
-  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 main h2 {
   color: var(--verde-escuro);
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-main p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 30px;
+main h3 {
+  color: var(--verde-escuro);
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+main p, main ul {
+  font-size: 1.1rem;
   color: #555;
+  margin-bottom: 15px;
+}
+
+ul {
+  padding-left: 20px;
 }
 
 .btn {
   background-color: var(--verde-escuro);
   color: var(--branco);
-  padding: 15px 30px;
+  padding: 12px 24px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -87,3 +98,4 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
+
