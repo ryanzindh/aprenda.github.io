@@ -1,4 +1,4 @@
-/* Reset básico */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -61,7 +61,7 @@ ul {
   background-color: #0056b3;
 }
 
-/* Formulário */
+
 #formulario {
   background: #e8f0fe;
   padding: 20px;
@@ -84,7 +84,7 @@ ul {
   text-align: center;
 }
 
-/* Resultado estiloso */
+
 .resultado-final {
   background: #d4edda;
   border: 1px solid #c3e6cb;
