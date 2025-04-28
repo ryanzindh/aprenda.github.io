@@ -39,8 +39,36 @@
     </section>
 
     <section id="taxa">
-      <h2>Calcular Sua Taxa Metabólica Basal</h2>
+      <h2>Taxa Metabólica Basal (TMB)</h2>
+
       <button class="btn" onclick="mostrarFormulario()">Calcular Taxa Metabólica Basal</button>
+
+      <div id="explicacao-tmb" style="margin-top: 30px;">
+        <p>Agora que você entendeu o básico, vamos definir quantas calorias você precisa por dia para alcançar seu objetivo.</p>
+        <p>Pra isso, a gente calcula a <strong>Taxa Metabólica Basal</strong> (TMB), que é a quantidade de energia que seu corpo gasta parado, só pra te manter vivo.</p>
+        <p>A fórmula é:</p>
+        <ul>
+          <li><strong>Homens:</strong> TMB = (10 × peso) + (6.25 × altura) − (5 × idade) + 5</li>
+          <li><strong>Mulheres:</strong> TMB = (10 × peso) + (6.25 × altura) − (5 × idade) − 161</li>
+        </ul>
+        <p>Depois de calcular a TMB, a gente multiplica ela pelo seu nível de atividade física:</p>
+        <ul>
+          <li><strong>Sedentário:</strong> × 1.2</li>
+          <li><strong>Levemente ativo:</strong> × 1.375</li>
+          <li><strong>Moderadamente ativo:</strong> × 1.55</li>
+          <li><strong>Muito ativo:</strong> × 1.725</li>
+          <li><strong>Extremamente ativo:</strong> × 1.9</li>
+        </ul>
+        <p>Esse resultado é o seu <strong>gasto calórico diário estimado</strong>.</p>
+
+        <h3>Definindo o objetivo:</h3>
+        <p>
+          • Se quiser ganhar massa → Adiciona 300 kcal a mais.<br>
+          • Se quiser perder gordura → Retira 300 kcal.
+        </p>
+
+        <p>Agora é só preencher seus dados abaixo!</p>
+      </div>
 
       <div id="formulario" style="display: none; margin-top: 30px;">
         <form onsubmit="calcularTMB(event)">
