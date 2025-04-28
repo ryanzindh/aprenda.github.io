@@ -1,7 +1,12 @@
 function mostrarFormulario() {
-  document.getElementById('formulario').style.display = 'block';
-  // Opcional: rolar pra o formulário
-  document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+  const formulario = document.getElementById('formulario');
+  formulario.style.display = 'block';
+  formulario.style.opacity = 0;
+
+  setTimeout(() => {
+    formulario.style.opacity = 1;
+    formulario.style.transition = 'opacity 0.8s ease';
+  }, 100); // pequena espera para ativar o efeito
 }
 
 function calcularTMB(event) {
@@ -13,30 +18,47 @@ function calcularTMB(event) {
   const sexo = document.getElementById('sexo').value;
   const atividade = parseFloat(document.getElementById('atividade').value);
   const objetivo = document.getElementById('objetivo').value;
+  const resultado = document.getElementById('resultado');
 
-  if (isNaN(peso) || isNaN(altura) || isNaN(idade)) {
+  // Validação
+  if (
+    isNaN(peso) || 
+    isNaN(altura) || 
+    isNaN(idade) || 
+    sexo === "" || 
+    isNaN(atividade) || 
+    objetivo === ""
+  ) {
     alert('Por favor, preencha todos os campos corretamente.');
     return;
   }
 
-  let tmb;
+  // Mostrando "Calculando..." antes do resultado
+  resultado.innerHTML = '<p style="color: #007bff;">Calculando...</p>';
 
-  if (sexo === 'masculino') {
-    tmb = (10 * peso) + (6.25 * altura) - (5 * idade) + 5;
-  } else if (sexo === 'feminino') {
-    tmb = (10 * peso) + (6.25 * altura) - (5 * idade) - 161;
-  } else {
-    alert('Selecione o sexo.');
-    return;
-  }
+  setTimeout(() => {
+    let tmb;
 
-  let gastoTotal = tmb * atividade;
+    if (sexo === 'masculino') {
+      tmb = (10 * peso) + (6.25 * altura) - (5 * idade) + 5;
+    } else if (sexo === 'feminino') {
+      tmb = (10 * peso) + (6.25 * altura) - (5 * idade) - 161;
+    }
 
-  if (objetivo === 'ganhar') {
-    gastoTotal += 300;
-  } else if (objetivo === 'perder') {
-    gastoTotal -= 300;
-  }
+    let gastoTotal = tmb * atividade;
 
-  document.getElementById('resultado').innerHTML = `Seu gasto calórico diário estimado é: <strong>${gastoTotal.toFixed(0)} kcal</strong>`;
+    if (objetivo === 'ganhar') {
+      gastoTotal += 300;
+    } else if (objetivo === 'perder') {
+      gastoTotal -= 300;
+    }
+
+    resultado.innerHTML = `
+      <div class="resultado-final">
+        <p>✅ Seu gasto calórico diário estimado é:</p>
+        <h2>${gastoTotal.toFixed(0)} kcal</h2>
+        <p><small>Lembre-se de ajustar conforme seus resultados!</small></p>
+      </div>
+    `;
+  }, 1000); // 1 segundo pra dar aquele "peso" no loading
 }
