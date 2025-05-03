@@ -2,120 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Como Meter o Shape</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre a TMB</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <header>
-    <h1>Como Meter o Shape</h1>
-    <nav>
-      <a href="#peso">Peso Corporal</a>
-      <a href="#energia">Energia</a>
-      <a href="#taxa">TMB</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="peso">
-      <h2>Peso Corporal e Energia</h2>
-      <p>Qual é o seu objetivo? Ganhar massa? Perder peso?</p>
-      <p><strong>Massa = peso</strong>.</p>
-      <p>Antes de qualquer coisa, a gente precisa entender como a energia do corpo funciona.</p>
-      <p>O nosso peso está ligado à energia. E a energia corporal é medida em <strong>caloria/kcal</strong> (quilocalorias), que é uma unidade de energia, tipo <strong>volts</strong> na eletricidade.</p>
-      <p>Se você consome mais energia do que gasta, você ganha peso.<br>
-      Se gasta mais do que consome, perde peso.<br>
-      Simples assim, sem mágica.</p>
-    </section>
-
-    <section id="energia">
-      <h2>O que é a Caloria?</h2>
-      <p>Caloria é uma unidade de energia, tipo volts do chuveiro.</p>
-      <p><strong>Como eu consumo energia?</strong> Comendo!</p>
-      <p><strong>Como eu gasto energia?</strong> Praticando atividades físicas, tipo musculação.</p>
-    </section>
-
-    <section id="taxa">
-      <h2>Taxa Metabólica Basal (TMB)</h2>
-      <div id="explicacao-tmb" style="margin-top: 30px;">
-        <p>Agora que você entendeu o básico, vamos definir quantas calorias você precisa por dia para alcançar seu objetivo.</p>
-        <p>Pra isso, a gente calcula a <strong>Taxa Metabólica Basal</strong> (TMB), que é a quantidade de energia que seu corpo gasta parado, só pra te manter vivo.</p>
-         <button class="btn" onclick="mostrarFormulario()">Calcular Taxa Metabólica Basal</button>
-        <p>A fórmula é:</p>
-        <ul>
-          <li><strong>Homens:</strong> TMB = (10 × peso) + (6.25 × altura) − (5 × idade) + 5</li>
-          <li><strong>Mulheres:</strong> TMB = (10 × peso) + (6.25 × altura) − (5 × idade) − 161</li>
-        </ul>
-        <p>Depois de calcular a TMB, a gente multiplica ela pelo seu nível de atividade física:</p>
-        <ul>
-          <li><strong>Sedentário:</strong> × 1.2</li>
-          <li><strong>Levemente ativo:</strong> × 1.375</li>
-          <li><strong>Moderadamente ativo:</strong> × 1.55</li>
-          <li><strong>Muito ativo:</strong> × 1.725</li>
-          <li><strong>Extremamente ativo:</strong> × 1.9</li>
-        </ul>
-        <p>Esse resultado é o seu <strong>gasto calórico diário estimado</strong>.</p>
-
-        <h3>Definindo o objetivo:</h3>
-        <p>
-          • Se quiser ganhar massa → Adiciona 300 kcal a mais.<br>
-          • Se quiser perder gordura → Retira 300 kcal.
-        </p>
-
-      </div>
-
-      <div id="formulario" style="display: none; margin-top: 30px;">
-        <form onsubmit="calcularTMB(event)">
-          <label>Peso (kg):</label><br>
-          <input type="number" id="peso" required><br><br>
-
-          <label>Altura (cm):</label><br>
-          <input type="number" id="altura" required><br><br>
-
-          <label>Idade (anos):</label><br>
-          <input type="number" id="idade" required><br><br>
-
-          <label>Sexo:</label><br>
-          <select id="sexo" required>
-            <option value="">Selecione</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-          </select><br><br>
-
-          <label>Nível de atividade:</label><br>
-          <select id="atividade" required>
-            <option value="">Selecione</option>
-            <option value="1.2">Sedentário</option>
-            <option value="1.375">Levemente ativo</option>
-            <option value="1.55">Moderadamente ativo</option>
-            <option value="1.725">Muito ativo</option>
-            <option value="1.9">Extremamente ativo</option>
-          </select><br><br>
-
-          <label>Objetivo:</label><br>
-          <select id="objetivo" required>
-            <option value="">Selecione</option>
-            <option value="ganhar">Ganhar massa</option>
-            <option value="perder">Perder peso</option>
-          </select><br><br>
-
-          <button type="submit" class="btn">Calcular</button>
-        </form>
-
-        <div id="resultado" style="margin-top: 20px;"></div>
-      </div>
-
-    </section>
-  </main>
-
-  <footer id="contato">
-    <p>© 2025 Como Meter o Shape RyanzinDH. Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
-
+  <div class="container">
+    <h1>Taxa Metabólica Basal (TMB)</h1>
+    <p>
+      A Taxa Metabólica Basal é a quantidade de energia que o corpo gasta em repouso para manter as funções vitais,
+      como respiração, batimentos cardíacos e temperatura corporal. Ela varia de acordo com idade, peso, altura e sexo.
+    </p>
+    <p>
+      Quer saber qual é a sua TMB? Clique no botão abaixo para usar a nossa calculadora!
+    </p>
+    <a href="calculadora/index.html">
+      <button>Calcular minha TMB</button>
+    </a>
+  </div>
 </body>
 </html>
