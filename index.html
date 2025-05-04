@@ -22,6 +22,18 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* Efeito de "salto" nos blocos */
+      .hover-spring:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-out;
+      }
+
+      /* Efeito de "salto" no texto */
+      .hover-text-spring:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-out;
+      }
     </style>
   </head>
   <body class="bg-gradient-to-br from-blue-50 to-white text-gray-800">
@@ -42,29 +54,29 @@
 
     <!-- Hero Section -->
     <section class="flex flex-col items-center justify-center text-center py-20 px-6 fade-in">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Transforme sua vida agora!</h2>
-      <p class="text-lg md:text-xl max-w-2xl mb-6 text-gray-700">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4 hover-text-spring">Transforme sua vida agora!</h2>
+      <p class="text-lg md:text-xl max-w-2xl mb-6 text-gray-700 hover-text-spring">
         Comece a jornada com saúde, paz e dinheiro de maneira simples e eficaz. O futuro que você quer começa agora.
       </p>
-      <a href="#saude" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition">Vamos Começar</a>
+      <a href="#saude" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition hover-spring">Vamos Começar</a>
     </section>
 
     <!-- Benefícios (gatilhos psicológicos) -->
     <section id="beneficios" class="py-20 bg-white px-6 fade-in">
       <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-bold text-blue-700 mb-6">Transforme sua vida com 3 pilares</h3>
+        <h3 class="text-3xl font-bold text-blue-700 mb-6 hover-text-spring">Transforme sua vida com 3 pilares</h3>
         <ul class="grid md:grid-cols-3 gap-8 text-left">
-          <li class="bg-green-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-green-600 mb-2">Saúde: corpo forte, mente clara</h4>
-            <p>Energia para agir e foco para vencer.</p>
+          <li class="bg-green-50 p-6 rounded-xl shadow hover:shadow-md transition hover-spring">
+            <h4 class="text-xl font-semibold text-green-600 mb-2 hover-text-spring">Saúde: corpo forte, mente clara</h4>
+            <p class="hover-text-spring">Energia para agir e foco para vencer.</p>
           </li>
-          <li class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-blue-600 mb-2">Paz: mente tranquila, vida equilibrada</h4>
-            <p>Controle sobre suas emoções e calma para decidir.</p>
+          <li class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-md transition hover-spring">
+            <h4 class="text-xl font-semibold text-blue-600 mb-2 hover-text-spring">Paz: mente tranquila, vida equilibrada</h4>
+            <p class="hover-text-spring">Controle sobre suas emoções e calma para decidir.</p>
           </li>
-          <li class="bg-yellow-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-yellow-600 mb-2">Dinheiro: liberdade para agir</h4>
-            <p>Planeje, conquiste e viva sem limitações.</p>
+          <li class="bg-yellow-50 p-6 rounded-xl shadow hover:shadow-md transition hover-spring">
+            <h4 class="text-xl font-semibold text-yellow-600 mb-2 hover-text-spring">Dinheiro: liberdade para agir</h4>
+            <p class="hover-text-spring">Planeje, conquiste e viva sem limitações.</p>
           </li>
         </ul>
       </div>
@@ -73,8 +85,8 @@
     <!-- Saúde -->
     <section id="saude" class="py-24 px-6 bg-gradient-to-r from-green-50 to-white fade-in">
       <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-4xl font-extrabold text-green-700 mb-6">Saúde é a base de tudo</h3>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
+        <h3 class="text-4xl font-extrabold text-green-700 mb-6 hover-text-spring">Saúde é a base de tudo</h3>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 hover-text-spring">
           Com saúde, você tem disposição para alcançar seus objetivos e viver com qualidade.
         </p>
       </div>
@@ -83,8 +95,8 @@
     <!-- Paz -->
     <section id="paz" class="py-24 px-6 bg-gradient-to-r from-blue-50 to-white fade-in">
       <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-4xl font-extrabold text-blue-700 mb-6">Paz é controle sobre sua mente</h3>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
+        <h3 class="text-4xl font-extrabold text-blue-700 mb-6 hover-text-spring">Paz é controle sobre sua mente</h3>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 hover-text-spring">
           Controle suas emoções e faça escolhas com clareza e confiança.
         </p>
       </div>
@@ -93,8 +105,8 @@
     <!-- Dinheiro -->
     <section id="dinheiro" class="py-24 px-6 bg-gradient-to-r from-yellow-50 to-white fade-in">
       <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-4xl font-extrabold text-yellow-700 mb-6">Dinheiro traz liberdade</h3>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
+        <h3 class="text-4xl font-extrabold text-yellow-700 mb-6 hover-text-spring">Dinheiro traz liberdade</h3>
+        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 hover-text-spring">
           Conquiste sua independência financeira e viva do jeito que escolheu.
         </p>
       </div>
