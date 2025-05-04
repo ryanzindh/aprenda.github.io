@@ -9,6 +9,18 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
@@ -25,12 +37,11 @@
         <a href="#sobre" class="hover:text-blue-500">Sobre</a>
         <a href="#beneficios" class="hover:text-blue-500">Benefícios</a>
         <a href="#saude" class="hover:text-blue-500">Saúde</a>
-        <a href="#contato" class="hover:text-blue-500">Contato</a>
       </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="flex flex-col items-center justify-center text-center py-20 px-6">
+    <section class="flex flex-col items-center justify-center text-center py-20 px-6 fade-in">
       <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Bem-vindo à Vida que Você Merece</h2>
       <p class="text-lg md:text-xl max-w-2xl mb-6 text-gray-700">
         Este é o início de uma jornada para uma vida mais leve, com paz de espírito, saúde vibrante e rotina equilibrada. Descubra como pequenas mudanças podem transformar completamente o seu bem-estar.
@@ -39,32 +50,28 @@
     </section>
 
     <!-- Benefícios (gatilhos psicológicos) -->
-    <section id="beneficios" class="py-20 bg-white px-6">
+    <section id="beneficios" class="py-20 bg-white px-6 fade-in">
       <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-bold text-blue-700 mb-6">Os quatro pilares da sua nova vida</h3>
-        <ul class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+        <h3 class="text-3xl font-bold text-blue-700 mb-6">Os três pilares que sustentam sua nova vida</h3>
+        <ul class="grid md:grid-cols-3 gap-8 text-left">
           <li class="bg-green-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-green-600 mb-2">Saúde Integral</h4>
-            <p>Transforme sua energia física e mental com hábitos saudáveis e sustentáveis.</p>
+            <h4 class="text-xl font-semibold text-green-600 mb-2">🧬 Saúde que Sustenta</h4>
+            <p>Mais do que não estar doente. É ter energia ao acordar, força para viver, leveza para sorrir. É seu corpo sendo o aliado da sua felicidade.</p>
           </li>
           <li class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-blue-600 mb-2">Paz Interior</h4>
-            <p>Desenvolva clareza, serenidade e presença no agora. Silencie o caos, escute sua essência.</p>
+            <h4 class="text-xl font-semibold text-blue-600 mb-2">🕊️ Paz que Silencia o Mundo</h4>
+            <p>A ausência do caos interno. É conseguir dormir sem culpa, respirar sem pressa e viver no presente com um coração calmo.</p>
           </li>
           <li class="bg-yellow-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-yellow-600 mb-2">Prosperidade</h4>
-            <p>Reconstrua sua relação com o dinheiro, cultivando segurança, abundância e propósito.</p>
-          </li>
-          <li class="bg-purple-50 p-6 rounded-xl shadow hover:shadow-md transition">
-            <h4 class="text-xl font-semibold text-purple-600 mb-2">Rotina com Propósito</h4>
-            <p>Organize seus dias com intenção, equilíbrio e tempo para o que realmente importa.</p>
+            <h4 class="text-xl font-semibold text-yellow-600 mb-2">💰 Dinheiro com Liberdade</h4>
+            <p>Você no controle do seu dinheiro, e não o contrário. Liberdade para dizer sim, segurança para dizer não e clareza para escolher seu caminho.</p>
           </li>
         </ul>
       </div>
     </section>
 
     <!-- Saúde (obra de arte) -->
-    <section id="saude" class="py-24 px-6 bg-gradient-to-r from-green-50 to-white">
+    <section id="saude" class="py-24 px-6 bg-gradient-to-r from-green-50 to-white fade-in">
       <div class="max-w-5xl mx-auto text-center">
         <h3 class="text-4xl font-extrabold text-green-700 mb-6">Saúde: o pilar silencioso da sua felicidade</h3>
         <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
@@ -88,18 +95,30 @@
       </div>
     </section>
 
-    <!-- Contato (rodapé) -->
-    <footer id="contato" class="bg-blue-600 text-white text-center py-10 px-6">
-      <h4 class="text-xl font-semibold mb-2">Pronto para transformar sua vida?</h4>
-      <p class="mb-4">Entre em contato e comece sua nova jornada agora.</p>
-      <a href="mailto:contato@aprenda.com" class="underline text-white">contato@aprenda.com</a>
-      <div class="mt-6 text-sm opacity-70">© 2025 Aprenda. Todos os direitos reservados.</div>
+    <!-- Rodapé simples -->
+    <footer class="bg-blue-600 text-white text-center py-6 px-6">
+      <div class="text-sm opacity-70">© 2025 Aprenda. Todos os direitos reservados.</div>
     </footer>
 
     <script>
       document.getElementById('menuButton').addEventListener('click', () => {
         const nav = document.querySelector('nav');
         nav.classList.toggle('hidden');
+      });
+
+      // Animações ao rolar a tela
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
       });
     </script>
   </body>
