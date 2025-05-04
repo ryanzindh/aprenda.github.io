@@ -1,142 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tudo pela LIBERDADE!</title></title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        scroll-behavior: smooth;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tudo pela LIBERDADE!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById('menuButton');
+      const menu = document.getElementById('menu');
+      menuButton.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
 
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-      }
-
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Efeito de "salto" nos blocos */
-      .hover-spring:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-out;
-      }
-
-      /* Efeito de "salto" no texto */
-      .hover-text-spring:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-out;
-      }
-    </style>
-  </head>
-  <body class="bg-gradient-to-br from-blue-50 to-white text-gray-800">
-    <!-- Menu -->
-    <header class="flex items-center justify-between p-6 shadow-sm">
-      <h1 class="text-xl font-bold text-blue-600">Aprenda</h1>
-      <button id="menuButton" class="md:hidden">
-        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+  <!-- HEADER -->
+  <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <h1 class="text-2xl font-bold text-blue-700">Tudo pela LIBERDADE!</h1>
+      <button id="menuButton" class="md:hidden text-blue-700 focus:outline-none" aria-label="Abrir menu">
+        ☰
       </button>
-      <nav class="hidden md:flex space-x-6 text-sm">
-        <a href="#saude" class="hover:text-blue-500">Saúde</a>
-        <a href="#paz" class="hover:text-blue-500">Paz</a>
-        <a href="#dinheiro" class="hover:text-blue-500">Dinheiro</a>
+      <nav id="menu" class="hidden md:flex gap-6">
+        <a href="#" class="hover:text-blue-500">Início</a>
+        <a href="#" class="hover:text-blue-500">Sobre</a>
+        <a href="#" class="hover:text-blue-500">Contato</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="flex flex-col items-center justify-center text-center py-20 px-6 fade-in">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4 hover-text-spring">Transforme sua vida agora!</h2>
-      <p class="text-lg md:text-xl max-w-2xl mb-6 text-gray-700 hover-text-spring">
-        Comece a jornada com saúde, paz e dinheiro de maneira simples e eficaz. Aprenda e Liberte-se!
-      </p>
-      <a href="#saude" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg transition hover-spring">Vamos Começar</a>
+  <!-- MAIN -->
+  <main class="pt-20 px-4 max-w-5xl mx-auto">
+
+    <!-- HERO -->
+    <section class="text-center py-16">
+      <h2 class="text-4xl font-bold mb-4 text-gray-900">Saúde, Paz e Liberdade Financeira</h2>
+      <p class="text-lg text-gray-600">Criando uma vida com sentido, propósito e tranquilidade. Simples, natural e acessível a todos.</p>
     </section>
 
-    <!-- Benefícios (gatilhos psicológicos) -->
-    <section id="beneficios" class="py-20 bg-white px-6 fade-in">
-      <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-bold text-blue-700 mb-6 hover-text-spring">Transforme sua vida com 3 pilares</h3>
-        <ul class="grid md:grid-cols-3 gap-8 text-left">
-          <li class="bg-green-50 p-6 rounded-xl shadow hover:shadow-md transition hover-spring">
-            <h4 class="text-xl font-semibold text-green-600 mb-2 hover-text-spring">Saúde</h4>
-            <p class="hover-text-spring">Seu corpo. Sua vida!</p>
-          </li>
-          <li class="bg-blue-50 p-6 rounded-xl shadow hover:shadow-md transition hover-spring">
-            <h4 class="text-xl font-semibold text-blue-600 mb-2 hover-text-spring">Paz</h4>
-            <p class="hover-text-spring">Controle sua mente, ações e reações. Viva!</p>
-          </li>
-          <li class="bg-yellow-50 p-6 rounded-xl shadow hover:shadow-md transition hover-spring">
-            <h4 class="text-xl font-semibold text-yellow-600 mb-2 hover-text-spring">Dinheiro</h4>
-            <p class="hover-text-spring">Conquiste a sua liberdade financeira!</p>
-          </li>
-        </ul>
+    <!-- CARDS -->
+    <section class="grid md:grid-cols-3 gap-6 py-8">
+      <div class="bg-green-100 p-6 rounded-2xl shadow hover:scale-105 transition">
+        <div class="text-4xl mb-2">💪</div>
+        <h3 class="text-xl font-semibold text-green-800">Saúde</h3>
+        <p class="text-gray-700 mt-2">Cuidar do corpo e da mente com hábitos naturais e sustentáveis.</p>
+      </div>
+      <div class="bg-blue-100 p-6 rounded-2xl shadow hover:scale-105 transition">
+        <div class="text-4xl mb-2">🧘‍♂️</div>
+        <h3 class="text-xl font-semibold text-blue-800">Paz</h3>
+        <p class="text-gray-700 mt-2">Viver com leveza, propósito e tranquilidade no dia a dia.</p>
+      </div>
+      <div class="bg-yellow-100 p-6 rounded-2xl shadow hover:scale-105 transition">
+        <div class="text-4xl mb-2">💰</div>
+        <h3 class="text-xl font-semibold text-yellow-800">Dinheiro</h3>
+        <p class="text-gray-700 mt-2">Criar liberdade financeira com simplicidade e inteligência.</p>
       </div>
     </section>
 
-    <!-- Saúde (Foco no Corpo e Shape) -->
-    <section id="saude" class="py-24 px-6 bg-gradient-to-r from-green-50 to-white fade-in">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-4xl font-extrabold text-green-700 mb-6 hover-text-spring">Saúde</h3>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 hover-text-spring">
-          Seu corpo é o reflexo do seu esforço. Treine e se alimente bem. A saúde física é a chave para ter energia e motivação para conquistar tudo o que deseja!
-        </p>
-      </div>
+    <!-- CALL TO ACTION -->
+    <section class="text-center py-12">
+      <h4 class="text-2xl font-semibold mb-4">Quer receber dicas semanais?</h4>
+      <form class="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-md border border-gray-300 w-72 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Inscrever</button>
+      </form>
     </section>
+  </main>
 
-    <!-- Paz -->
-    <section id="paz" class="py-24 px-6 bg-gradient-to-r from-blue-50 to-white fade-in">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-4xl font-extrabold text-blue-700 mb-6 hover-text-spring">Paz</h3>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 hover-text-spring">
-          A paz começa dentro de você. Treine sua mente para manter o equilíbrio, a serenidade e a clareza. Você é capaz de alcançar a calma em meio ao caos.
-        </p>
-      </div>
-    </section>
+  <!-- FOOTER -->
+  <footer class="bg-white text-center text-gray-500 py-6 mt-10 border-t">
+    <p>© 2025 Tudo pela Liberdade. Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Dinheiro -->
-    <section id="dinheiro" class="py-24 px-6 bg-gradient-to-r from-yellow-50 to-white fade-in">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3 class="text-4xl font-extrabold text-yellow-700 mb-6 hover-text-spring">Dinheiro</h3>
-        <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10 hover-text-spring">
-          O dinheiro traz a liberdade para viver conforme seus sonhos. Conquiste sua independência financeira com estratégias inteligentes e foco.
-        </p>
-      </div>
-    </section>
-
-    <!-- Rodapé simples -->
-    <footer class="bg-blue-600 text-white text-center py-6 px-6">
-      <div class="text-sm opacity-70">© 2025 Aprenda. Por RyanzinDH</div>
-    </footer>
-
-    <script>
-      document.getElementById('menuButton').addEventListener('click', () => {
-        const nav = document.querySelector('nav');
-        nav.classList.toggle('hidden');
-      });
-
-      // Animações ao rolar a tela
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.1
-      });
-
-      document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-      });
-    </script>
-  </body>
+</body>
 </html>
