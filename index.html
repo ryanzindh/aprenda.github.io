@@ -5,75 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tudo pela LIBERDADE!</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuButton = document.getElementById('menuButton');
+  <script>
+    function toggleMenu() {
       const menu = document.getElementById('menu');
-      menuButton.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-    });
+      menu.classList.toggle('hidden');
+    }
   </script>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-900 font-sans">
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h1 class="text-2xl font-bold text-blue-700">Tudo pela LIBERDADE!</h1>
-      <button id="menuButton" class="md:hidden text-blue-700 focus:outline-none" aria-label="Abrir menu">
-        ☰
-      </button>
-      <nav id="menu" class="hidden md:flex gap-6">
-  <a href="#" class="text-green-800 hover:underline">Saúde</a>
-  <a href="#" class="text-blue-800 hover:underline">Paz</a>
-  <a href="#" class="text-yellow-800 hover:underline">Dinheiro</a>
-</nav>
-
-      </nav>
-    </div>
+  <!-- CABEÇALHO -->
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-700">Tudo pela LIBERDADE!</h1>
+    <button class="md:hidden text-blue-700 text-3xl" onclick="toggleMenu()">☰</button>
+    <nav id="menu" class="hidden md:flex gap-6">
+      <a href="#" class="text-green-800 hover:underline">Saúde</a>
+      <a href="#" class="text-blue-800 hover:underline">Paz</a>
+      <a href="#" class="text-yellow-700 hover:underline">Dinheiro</a>
+    </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="pt-20 px-4 max-w-5xl mx-auto">
-
-    <!-- HERO -->
-    <section class="text-center py-16">
-      <h2 class="text-4xl font-bold mb-4 text-gray-900">Saúde, Paz e Liberdade Financeira</h2>
-      <p class="text-lg text-gray-600">Criando uma vida com sentido, propósito e tranquilidade. Simples, natural e acessível a todos.</p>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="p-6 max-w-5xl mx-auto">
+    <section class="text-center my-12">
+      <h2 class="text-4xl font-bold text-gray-900">Saúde, Paz e Liberdade Financeira</h2>
+      <p class="mt-4 text-lg text-gray-700">Criando uma vida com sentido, propósito e tranquilidade. Simples, natural e acessível a todos.</p>
     </section>
 
-    <!-- CARDS -->
-    <section class="grid md:grid-cols-3 gap-6 py-8">
-      <div class="bg-green-100 p-6 rounded-2xl shadow hover:scale-105 transition">
-        <div class="text-4xl mb-2">💪</div>
+    <section class="grid md:grid-cols-3 gap-6">
+      <div class="bg-green-100 p-6 rounded-xl shadow">
         <h3 class="text-xl font-semibold text-green-800">Saúde</h3>
-        <p class="text-gray-700 mt-2">Cuidar do corpo e da mente com hábitos naturais e sustentáveis.</p>
+        <p class="mt-2 text-gray-800">Cuidar do corpo e da mente com hábitos naturais e sustentáveis.</p>
       </div>
-      <div class="bg-blue-100 p-6 rounded-2xl shadow hover:scale-105 transition">
-        <div class="text-4xl mb-2">🧘‍♂️</div>
+      <div class="bg-blue-100 p-6 rounded-xl shadow">
         <h3 class="text-xl font-semibold text-blue-800">Paz</h3>
-        <p class="text-gray-700 mt-2">Viver com leveza, propósito e tranquilidade no dia a dia.</p>
+        <p class="mt-2 text-gray-800">Viver com leveza, propósito e tranquilidade no dia a dia.</p>
       </div>
-      <div class="bg-yellow-100 p-6 rounded-2xl shadow hover:scale-105 transition">
-        <div class="text-4xl mb-2">💰</div>
+      <div class="bg-yellow-100 p-6 rounded-xl shadow">
         <h3 class="text-xl font-semibold text-yellow-800">Dinheiro</h3>
-        <p class="text-gray-700 mt-2">Criar liberdade financeira com simplicidade e inteligência.</p>
+        <p class="mt-2 text-gray-800">Criar liberdade financeira com simplicidade e inteligência.</p>
       </div>
-    </section>
-
-    <!-- CALL TO ACTION -->
-    <section class="text-center py-12">
-      <h4 class="text-2xl font-semibold mb-4">Quer receber dicas semanais?</h4>
-      <form class="flex flex-col md:flex-row gap-4 justify-center items-center">
-        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-md border border-gray-300 w-72 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Inscrever</button>
-      </form>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-white text-center text-gray-500 py-6 mt-10 border-t">
+  <!-- RODAPÉ -->
+  <footer class="text-center text-gray-500 py-6 mt-10">
     <p>© 2025 Tudo pela Liberdade. Todos os direitos reservados.</p>
   </footer>
 
